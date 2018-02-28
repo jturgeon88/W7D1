@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
-
+import App from './components/app.jsx'
 
 
 class Test extends React.Component {
@@ -17,5 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
   // window.store = store;
   window.store = store;
-  ReactDOM.render(<Test/>, document.getElementById('content'));
+  ReactDOM.render(<App/>, document.getElementById('content'));
 });
