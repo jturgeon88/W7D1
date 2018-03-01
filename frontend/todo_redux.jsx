@@ -15,7 +15,5 @@ class Test extends React.Component {
 }
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
-  // window.store = store;
-  window.store = store;
-  ReactDOM.render(<Root/>, document.getElementById('content'));
+  ReactDOM.render(<Root store={store} />, document.getElementById('content'));
 });

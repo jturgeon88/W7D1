@@ -17,7 +17,7 @@ const initialState = {
   },
 };
 
-const todosReducer = (state = {}, action) => {
+const todosReducer = (state = initialState, action) => {
   Object.freeze(state);
 
   switch(action.type){
@@ -31,6 +31,6 @@ const todosReducer = (state = {}, action) => {
   }
 };
 
-window.todosReducer = todosReducer;
+// window.todosReducer = todosReducer;
 
 export default todosReducer;

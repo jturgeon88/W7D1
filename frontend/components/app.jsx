@@ -1,11 +1,12 @@
+
 import React from 'react';
-//To test this component
-class App extends React.Component {
-  render () {
-    return(
-      <h1>Redux Todos</h1>
-    )
-  }
-}
+import TodoListContainer from './todos/todo_list_container';
+
+const App = () => (
+  <div className="app">
+    <h1>Super Awesome Todo List</h1>
+    <TodoListContainer />
+  </div>
+);
 
 export default App;
