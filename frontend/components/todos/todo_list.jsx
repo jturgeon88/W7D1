@@ -4,9 +4,17 @@ import React from 'react';
 class TodoList extends React.Component {
 
   render() {
+    const todos = this.props.todos;
+    const titles = todos.map(todo => (
+      <li>{todo.title}</li>
+    ));
+
     return(
       <div>
-        <h3>Todo List goes here!</h3>
+        <ul>
+          {titles}
+        </ul>
+        <h3></h3>
       </div>
     );
   }
