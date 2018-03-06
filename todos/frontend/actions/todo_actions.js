@@ -14,6 +14,8 @@ export const receiveTodo = todo => ({
 });
 
 
-export const fetchTodos = () => dispatch (
+export const fetchTodos = () => dispatch => (
   TodoAPIUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)))
 );
+
+window.fetchTodos = fetchTodos;

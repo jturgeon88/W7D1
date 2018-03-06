@@ -4,5 +4,3 @@ export const fetchTodos = () => (
     url: '/api/todos'
   })
 );
-
-window.fetchTodos = fetchTodos;
