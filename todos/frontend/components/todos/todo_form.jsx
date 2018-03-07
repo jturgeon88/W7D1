@@ -1,5 +1,6 @@
 import React from 'react';
 import { uniqueId } from '../../util/id_generator';
+import ErrorList from './error_list';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -22,16 +23,15 @@ class TodoForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const todo = Object.assign({}, this.state, { id: uniqueId() });     //THis creates a new todo object and assigns it a unique id through our util function
-    this.props.receiveTodo(todo);   //Here we're invoking the action creator and passing it our new todo
-    this.setState({
-      title: '',
-      body: ''
-    });   //This resets the form
+    this.props.createTodo({todo}).then(
+      () => this.setState({title: '', body: ''})   //This resets the form
+    );   //Here we're invoking the action creator and passing it our new todo
   }
 
   render () {
     return(
       <form className="todo-form" onSubmit={this.handleSubmit}>
+        <ErrorList errors={ this.props.errors } />
         <label>Enter the title of your new todo:
           <input
             className="input"
