@@ -3,11 +3,17 @@ import TodoList from './todo_list'
 
 class TodoListItem extends React.Component {
   render () {
+    const { todo, removeTodo } = this.props;
     const title = this.props.todo.title;
     return (
-      <li>
-        {title}
-      </li>
+      <div>
+        <li>
+          {title}
+        </li>
+        <button
+          className="delete-button"
+          onClick={() => removeTodo(todo)}>Delete Todo</button>
+      </div>
     );
   }
 }
