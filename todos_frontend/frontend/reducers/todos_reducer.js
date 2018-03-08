@@ -30,12 +30,7 @@ const todosReducer = (state = initialState, action) => {
       return merge({}, state, newTodo);
     case REMOVE_TODO:
       nextState = merge({}, state);
-      console.log(nextState[action.todo.id]);
-      console.log("HEYOO");
-      console.log(nextState);
       delete nextState[action.todo.id];
-      console.log('should be deleted?');
-      console.log(nextState);
       return nextState;
     default:
       return state;

@@ -1,5 +1,6 @@
 import React from 'react';
 import ErrorList from './error_list';
+import { uniqueId } from '../../util/id_generator';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class TodoForm extends React.Component {
   // component is called in todo_list.jsx)
   handleSubmit(e) {
     e.preventDefault();
-    const todo = Object.assign({}, this.state);
+    const todo = Object.assign({}, this.state, { id: uniqueId() });
     this.props.createTodo({ todo }).then(
       () => this.setState({
         title: "",
